@@ -18,7 +18,7 @@ import {
 } from './types'
 import { PaginationProps } from '@hi-ui/pagination'
 import { useColWidth } from './hooks/use-col-width'
-import { parseFixedColumns, setColumnsDefaultWidth } from './utils'
+import { parseFixedColumns, setColumnsDefaultWidth, uuid } from './utils'
 import { isArrayNonEmpty, isNullish } from '@hi-ui/type-assertion'
 import { useCheck, useSelect } from '@hi-ui/use-check'
 import { invariant } from '@hi-ui/env'
@@ -74,6 +74,7 @@ export const useTable = ({
   rowSelection,
   cellRender,
   fieldKey = 'key',
+  summary,
   ...rootProps
 }: UseTableProps) => {
   /**
@@ -530,6 +531,18 @@ export const useTable = ({
     return _data
   }, [activeSorterColumn, activeSorterType, transitionData, columns])
 
+  const getSummaryRows = useCallback(() => {
+    const summaryRows = summary ? summary(cacheData) : []
+
+    if (isArrayNonEmpty(summaryRows)) {
+      return summaryRows.map((row: any) => {
+        return { id: row.key ?? uuid(), raw: row }
+      })
+    }
+
+    return []
+  }, [summary, cacheData])
+
   return {
     rootProps,
     activeSorterColumn,
@@ -606,6 +619,7 @@ export const useTable = ({
     cellRender,
     showColMenu,
     onLoadChildren,
+    getSummaryRows,
   }
 }
 
@@ -752,6 +766,10 @@ export interface UseTableProps {
    */
   cellRender?: (text: any) => React.ReactNode
   onLoadChildren?: any
+  /**
+   * 总结行
+   */
+  summary?: (data: object[]) => object[]
 }
 
 export type UseTableReturn = ReturnType<typeof useTable>

@@ -28,6 +28,7 @@ export const TableRow = forwardRef<HTMLTableRowElement | null, TableRowProps>(
       expandedTree,
       isSumRow, // 是否为合计行
       isAvgRow, // 是否为平均行
+      isSummary,
     },
     ref
   ) => {
@@ -188,7 +189,8 @@ export const TableRow = forwardRef<HTMLTableRowElement | null, TableRowProps>(
       draggable && dragging && `${prefixCls}-row--dragging`,
       draggable && dragDirection && `${prefixCls}-row--drag-${dragDirection}`,
       isSumRow && `${prefixCls}-row--total`,
-      isAvgRow && `${prefixCls}-row--avg`
+      isAvgRow && `${prefixCls}-row--avg`,
+      isSummary && `${prefixCls}-row--summary`
     )
 
     const firstColumn = flattedColumnsWithoutChildren.find((item) => {
@@ -256,6 +258,10 @@ export interface TableRowProps {
    * 是否为均值行
    */
   isAvgRow?: boolean
+  /**
+   * 是否为总结行
+   */
+  isSummary?: boolean
   /**
    * 表格行数据
    */

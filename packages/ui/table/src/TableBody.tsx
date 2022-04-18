@@ -32,6 +32,7 @@ export const TableBody = forwardRef<HTMLDivElement | null, TableBodyProps>(
       avgRow,
       hasSumColumn,
       sumRow,
+      getSummaryRows,
     } = useTableContext()
 
     const cls = cx(`${prefixCls}-body`)
@@ -110,6 +111,17 @@ export const TableBody = forwardRef<HTMLDivElement | null, TableBodyProps>(
                     isAvgRow
                   />
                 ) : null}
+
+                {getSummaryRows().map((rowData, index) => {
+                  return (
+                    <TableRow
+                      key={avgRow.id}
+                      rowIndex={transitionData.length + 2 + index}
+                      rowData={rowData as any}
+                      isSummary
+                    />
+                  )
+                })}
               </>
             ) : (
               // 空状态，colSpan 占满表格整行

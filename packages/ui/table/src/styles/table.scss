@@ -218,7 +218,8 @@ $prefix: '#{$component-prefix}-table' !default;
     }
 
     &--avg,
-    &--total {
+    &--total,
+    &--summary {
       & > .#{$prefix}-cell {
         background-color: use-color('gray', 50);
       }
