@@ -15,7 +15,11 @@ export const useDrop = ({
   const swapLatest = useLatestCallback(onSwapProp)
 
   const onSwap = useCallback(
-    async (sourceId, targetId, dragDirection) => {
+    async (
+      sourceId: React.ReactText,
+      targetId: React.ReactText,
+      dragDirection: UseDropNodeDirection
+    ) => {
       if (!draggable) return
       if (targetId === sourceId) return
       if (!dragInfoRef.current) return
@@ -101,7 +105,7 @@ export const useDrag = ({
   const itemLatestRef = useLatestRef(item)
 
   const onDragStart = useCallback(
-    (evt) => {
+    (evt: React.DragEvent) => {
       if (!draggable) return
 
       evt.stopPropagation()
@@ -138,7 +142,7 @@ export const useDrag = ({
   const onDragOverPropLatest = useLatestCallback(onDragOverProp)
 
   const onDragOver = useCallback(
-    (evt) => {
+    (evt: React.DragEvent) => {
       if (!draggable) return
 
       evt.preventDefault()
@@ -230,7 +234,7 @@ export const useDrag = ({
       try {
         const { sourceId } = JSON.parse(evt.dataTransfer.getData(dataTransferKey))
 
-        onSwapPropLatest(sourceId, targetId, dragDirection)
+        onSwapPropLatest(sourceId, targetId, dragDirection!)
       } catch (error) {
         console.error(error)
       }
