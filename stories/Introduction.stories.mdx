@@ -7,11 +7,12 @@ import { Meta } from "@storybook/addon-docs/blocks";
   欢迎来到HiUI V4，使用前请一定要先加入群聊！尊享内测福利：
 </h1>
 
+> <a href="https://github.com/XiaoMi/hiui/tree/next/4.0">点击访问源码【分支：`next/4.0`】</a>
 
 <br />
 <h3>1. 群内有各种 V4 使用攻略和 FAQ 解答</h3>
 <h3>2. 和群内大佬们在线交流，解决问题</h3>
-<h3>3. 随时同步 V4 官方最新进展给各位</h3>
+<h3>3. 随时同步 V4 最新官方进展给各位</h3>
 
 <img
   src="https://cdn.cnbj1.fds.api.mi-img.com/hiui-template/resources/yaoqing.png"
@@ -21,48 +22,33 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 </div>
 
-
 <br />
 <br />
 
 <div align="center">
 
-
-[![HIUI Logo](https://raw.githubusercontent.com/XiaoMi/hiui/master/site/static/img/logo.png)](https://xiaomi.github.io/hiui/)
-
-<h1 align="center">HIUI</h1>
-
-[![JavaScript Style Guide](https://camo.githubusercontent.com/58fbab8bb63d069c1e4fb3fa37c2899c38ffcd18/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d7374616e646172642d627269676874677265656e2e737667)](https://github.com/standard/standard)
-
-[English](https://github.com/XiaoMi/hiui/blob/master/README.md) | [中文](https://github.com/XiaoMi/hiui/blob/master/README-zh.md)
-
-</div>
-
-
----
-
-HIUI 是一个面向中后台系统的前端组件库，可以帮助开发人员快速实现交互一致、界面美观的界面开发。
-
-## 特性
-
-- 精于中后台产品的交互与视觉设计
-- 全面的流程、数据展示模板，从业务中来，模板、组件覆盖大多数中后台系统需求
-- 数据结构分离的单组件设计，无需学习，升级方便，开箱即用
-
-## 安装
+## 安装（必看）
 
 ```bash
+# 设置镜像源为 npm 官方源！
+# 设置镜像源为 npm 官方源！！
 # 设置镜像源为 npm 官方源！！！
 npm config set registry https://registry.npmjs.org
 
-# 全量安装（末尾一定要带上 `@feature`）
+# 全量安装（末尾一定要带上 `@feature`！）
+# 全量安装（末尾一定要带上 `@feature`！！）
+# 全量安装（末尾一定要带上 `@feature`！！！）
 npm install @hi-ui/hiui@feature
 
-# 单独组件包安装（末尾一定要带上 `@feature`）
+# 单独组件包安装（末尾一定要带上 `@feature`！）
+# 单独组件包安装（末尾一定要带上 `@feature`！！）
+# 单独组件包安装（末尾一定要带上 `@feature`！！！）
 npm install @hi-ui/组件名@feature
 ```
 
-## 使用
+> 注意：组件名为小写，使用中横线连接。比如：`check-select`。
+
+## 使用（必看）
 
 ```js
 // 全量安装使用
@@ -80,9 +66,35 @@ export const Demo = () => {
 };
 ```
 
-组件具体使用详见侧边栏具体示例。
+V4 组件具体使用详见侧边栏具体示例。
 
-> v3 组件使用详见[官方文档](https://xiaomi.github.io/hiui/zh-CN/docs/quick-start)。
+> V3 组件使用详见[官方文档](https://xiaomi.github.io/hiui/zh-CN/docs/quick-start)。
+
+<br />
+<br />
+
+<img
+  src="https://raw.githubusercontent.com/XiaoMi/hiui/master/site/static/img/logo.png"
+  width="64"
+/>
+
+<h1 align="center">HIUI</h1>
+
+[![JavaScript Style Guide](https://camo.githubusercontent.com/58fbab8bb63d069c1e4fb3fa37c2899c38ffcd18/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f636f64655f7374796c652d7374616e646172642d627269676874677265656e2e737667)](https://github.com/standard/standard)
+
+[English](https://github.com/XiaoMi/hiui/blob/master/README.md) | [中文](https://github.com/XiaoMi/hiui/blob/master/README-zh.md)
+
+</div>
+
+---
+
+HIUI 是一个面向中后台系统的前端组件库，可以帮助开发人员快速实现交互一致、界面美观的界面开发。
+
+## 特性
+
+- 精于中后台产品的交互与视觉设计
+- 全面的流程、数据展示模板，从业务中来，模板、组件覆盖大多数中后台系统需求
+- 数据结构分离的单组件设计，无需学习，升级方便，开箱即用
 
 ## 贡献
 
@@ -93,8 +105,8 @@ export const Demo = () => {
 ├── build                   # 构建命令
 ├── components              # 组件
 ├── docs                    # 使用文档
-│   ├── en-US
-│   └── zh-CN
+│   ├── en-US
+│   └── zh-CN
 ├── libs                    # 第三方依赖
 ├── locales                 # 语言配置
 ├── site                    # 文档页模板
