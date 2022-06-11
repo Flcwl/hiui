@@ -29,6 +29,8 @@
     "postbuild": "yarn bootstrap",
     "build": "lerna run build --no-private --sort",
     "storybook": "start-storybook --no-manager-cache false -p 6006",
+    "postdeploy": "yarn run build",
+    "deploy": "yarn run build-storybook",
     "build-storybook": "build-storybook",
     "fix": "standard --fix && stylelint --config .stylelintrc 'components/**/*.scss' --fix",
     "eslint": "eslint --fix ./packages/**/*.tsx",
